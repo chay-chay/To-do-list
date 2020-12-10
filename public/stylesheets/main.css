@@ -9,12 +9,13 @@
   html, body {
     height: 100%;
     width: 100%;
+    background-color: #ffc7c7 !important;
   }
 
   /* --- Welcome Page Styles --- */
   body {
-    background-color: lightblue;
-    color: #333;
+    background-color: #ffc7c7;
+    color: #ffc7c7;
     font-family: Sans-Serif;
     line-height: 18px;
   }
@@ -49,6 +50,7 @@
 
   p {
     margin-bottom: 18px;
+    line-height: 50px;
   }
 
   .main {
@@ -60,17 +62,7 @@
     width: 60%; /* 480px / 800px */
   }
 
-  .sidebar {
-    background: #eee;
-    border: 1px solid #ccc;
-    float: right;
-    padding: 2.08333333333%; /* 5px / 240px */
-    width: 30%; /* 240px / 800px */
-  }
 
-  .sidebar ul {
-    font-size: 14px;
-  }
 
   .branding {
     clear: both;
@@ -91,17 +83,6 @@
     width: auto;
   }
 
-  .content, .sidebar {
-    float: none;
-    width: 100%;
-  }
-
-  .sidebar {
-    background: transparent;
-    border: none;
-    border-top: 2px solid #ccc;
-    padding: 0;
-  }
 
   h1 {
     font-size: 24px;
@@ -112,4 +93,124 @@
     font-size: 18px;
     line-height: 24px;
   }
+}
+
+/* Layout & Login page */
+
+.title{
+  text-align: center;
+  color: #ffc7c7;
+  font-size: 4rem;
+  line-height: 1.6;
+  
+}
+
+.main-content{
+	width: 50%;
+	border-radius: 20px;
+	box-shadow: 0 5px 5px rgba(0,0,0,.4);
+	margin: 5em auto;
+	display: flex;
+}
+.company__info{
+	background-color: #ffc7c7;
+	border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
+  line-height: 2;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	color: #fff;
+}
+
+@media screen and (max-width: 640px) {
+  .main-content{
+    width: 100%;
+    margin: auto;
+  }
+	.company__info{
+		display: none;
+	}
+	.login_form{
+		border-top-left-radius:10px;
+    border-bottom-left-radius:10px;
+    
+	}
+}
+@media screen and (min-width: 642px) and (max-width:800px){
+	.main-content{width: 70%;}
+}
+.row > h2{
+	color:#ffc7c7;
+}
+.login_form{
+	background-color: #fff;
+	border-top-right-radius:20px;
+	border-bottom-right-radius:20px;
+	border-top:1px solid #ccc;
+	border-right:1px solid #ccc;
+}
+
+.form__input{
+	width: 100%;
+	border:0px solid transparent;
+	border-radius: 50;
+	border-bottom: 1px solid #aaa;
+	padding: 1em .5em .5em;
+	padding-left: 1em;
+	outline:none;
+	margin:1.5em auto;
+	transition: all .5s ease;
+}
+.form__input:focus{
+	border-bottom-color: #ffc7c7;
+	box-shadow: 0 0 5px rgba(0,80,80,.4); 
+	border-radius: 4px;
+}
+.btn{
+  transition: all .5s ease;
+	width: 70%;
+	border-radius: 30px;
+	color:#ffc7c7;
+	font-weight: 600;
+	background-color: #fff;
+	border: 1px solid #ec61b7;
+	margin-top: 1.5em;
+	margin-bottom: 1em;
+}
+.btn:hover, .btn:focus{
+	background-color: #ffc7c7;
+	color:rgb(248, 210, 226);
+}
+
+/* To do list */
+.login-user {
+  color: hsl(0, 2%, 35%);
+}
+.my-to-do{
+  color: hsl(0, 2%, 35%);
+}
+
+.create-todo{
+  text-align: center;
+}
+
+.my-list{
+  text-align: center;
+}
+
+.button{
+  display: inline-block;
+  align-items: center;
+  width: 200px;
+  height: 50px;
+}
+
+.loggin{
+  text-align: left;
+}
+
+.signup{
+  line-height: 50px;
+  text-align: center;
 }

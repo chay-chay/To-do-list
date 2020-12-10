@@ -1,0 +1,13 @@
+<h2 class="my-to-do my-list"> My To do list!  </h2>
+<% if logged_in?  %>
+  <h4 class="login-user my-to-do loggin">Logged in user:  <%= current_user.email %></h4>
+<% end %>
+
+
+<% current_user.todolists.each_with_index do |t, index| %>
+<%= index+1%>. <a href="/todolists/<%=t.id%>"><%= t.todo%><br></a> <%end%>
+
+
+ 
+
+
