@@ -2,10 +2,11 @@
 <h4 class="my-to-do">List: <%= @todo.todo%></h4>
 
 
- <a href="/todolists/<%= @todo.id %>/edit" class="btn button">Edit</a>
+ <a href="/todolists/<%= @todo.id %>/edit" class="btn-edt line" >Edit</a>
   <form method="POST" action="/todolists/<%= @todo.id %>">
       <input type="hidden" name="_method" value="DELETE">
-      <input type="submit" value="Delete List!" class="btn button">
+      <input type="submit" value="Delete List!" class="btn-del">
    </form>
+  
 
    

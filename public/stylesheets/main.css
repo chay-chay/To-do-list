@@ -105,12 +105,16 @@
   
 }
 
+.container-fluid{
+padding-left: 500px;
+}
+
 .main-content{
-	width: 50%;
+	width: 100%;
 	border-radius: 20px;
 	box-shadow: 0 5px 5px rgba(0,0,0,.4);
 	margin: 5em auto;
-	display: flex;
+  display: flex;
 }
 .company__info{
 	background-color: #ffc7c7;
@@ -213,4 +217,32 @@
 .signup{
   line-height: 50px;
   text-align: center;
+}
+
+.btn-del{
+  background-color: #ffc7c7;
+  border-radius: 12px;
+  width: 100px;
+  text: bold;
+  color: #faf6f8;
+  border: #fa99ce ;
+}
+
+.btn-edt{
+  background-color: #ffc7c7;
+  border-radius: 12px;
+  width: 200px;
+  padding: 5px 10px 5px 10px;
+  text: bold;
+  color: #faf6f8;
+  border: #fa99ce ;
+  
+}
+
+.line{
+  line-height: 5;
+}
+
+.line2{
+  line-height: 3;
 }

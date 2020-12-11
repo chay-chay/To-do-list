@@ -1,8 +1,8 @@
-<h3 class="my-to-do my-list">Edit your to do list </h3>
+<h3 class="my-to-do my-list line2">Edit your to do list </h3>
 
 <form method="POST" action="/todolists/<%= @todo.id %>">
 
     <input type="hidden" name="_method" value="PUT">
-    Todo: <input type="text" name="todo" value="<%= @todo.todo%>">
-    <input type="submit" value="Update List!" >
+    Todo: <input type="text" name="todo" value="<%= @todo.todo%>" > 
+    <input type="submit" value="Update List!" class="btn-edt">
 </form>
