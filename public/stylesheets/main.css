@@ -211,7 +211,7 @@ padding-left: 500px;
 }
 
 .loggin{
-  text-align: left;
+  text-align: right;
 }
 
 .signup{
@@ -245,4 +245,23 @@ padding-left: 500px;
 
 .line2{
   line-height: 3;
+}
+
+.notice {
+  text-align: center;
+  width: 100%;
+  color: rgb(43, 48, 49);
+  background: #99fad1;
+}
+.message {  
+  text-align: center;
+  width: 100%;
+  color: rgb(66, 58, 58);
+  background: #f3e8a7;
+}
+.alert {
+  text-align: center;
+  width: 100%;
+  color: #fff;
+  background: #f37081;
 }

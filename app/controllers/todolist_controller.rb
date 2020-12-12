@@ -37,6 +37,7 @@ post '/todolists' do
     redirect_if_not_logged_in
     todo = current_user.todolists.build(params)
     todo.save 
+    flash[:notice] = "Your list has been created!"
     redirect '/todolists' # makes a new GET request 
 end
 
@@ -52,7 +53,8 @@ put '/todolists/:id' do
     @todo = Todolist.find(params["id"]) 
     redirect_if_not_authorized
    
-   @todo.update(todo: params["todo"])
+   @todo.update(todo: params["todo"], date: params["date"])
+   flash[:notice] = "Your list has been updated!"
     redirect "/todolists/#{@todo.id}"
 end
 
@@ -60,6 +62,7 @@ delete '/todolists/:id' do
     @todo = Todolist.find(params["id"])
     redirect_if_not_authorized
     @todo.destroy
+    flash[:alert] ="Your list has been deleted!"
     redirect '/todolists'
 end
 

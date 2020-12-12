@@ -8,17 +8,22 @@ class UserController < ApplicationController
         
         user = User.new(email: params["email"], password: params["password"])
         if user.email == ""|| user.password == "" || User.find_by_email(params["email"])
-          
+            flash[:alert] = "Invalid email or password!"
             redirect '/signup'
         else
             user.save
             session[:user_id] = user.id
+            flash[:notice] = "Profile created successfully!"
             redirect '/todolists'
         end
     end
 
     get '/login' do #show the form
-        erb :"/users/login"
+       if logged_in?
+        flash[:message] = 'You have already logged in!'
+        end
+            erb :"/users/login"
+       
     end
 
     post '/login' do  #process the form 
@@ -27,15 +32,18 @@ class UserController < ApplicationController
         # is there password correct
         if user && user.authenticate(params[:password])
             session[:user_id] = user.id 
+            flash[:notice] = "login successful!"
             redirect '/todolists'
         else
-            redirect 'users/login'
+            flash[:alert] = "Invalid email or password!"
+            redirect '/login'
         end
     end
 
     get '/logout' do 
         session.delete(:user_id)  # delete just the user_id 
         # session.clear 
+        flash[:notice] = "You have successfully logged out!"
         redirect '/'
 
     end

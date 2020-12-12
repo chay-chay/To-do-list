@@ -34,18 +34,35 @@
           <a class="nav-link" href="/todolists/new">Create a list</a>
         </li>
         <li class="nav-item">
+          <a class="nav-link" href="/login">Login</a>
+        </li>
+        <li class="nav-item">
           <a class="nav-link" href="/logout">Logout</a>
         </li>
       </ul>
-      <span class="navbar-text">
-        
+      <span class="navbar-text"> 
+      <% if logged_in?%> 
+      Logged in user: <%= current_user.email %>
+      <% end %>
       </span>
     </div>
   </div>
 </nav>
 
     <div class="wrapper">
+
+     <% if flash[:alert] %>
+        <div class="alert"><%= flash[:alert] %></div>
+        <%elsif flash[:message]%>
+        <div class="message"><%= flash[:message] %></div>
+      <%elsif flash[:notice]%>
+        <div class="notice"><%= flash[:notice] %></div>
+        <% end %>
+
         <h1 class="title"> To-Do-List</h1>
+
+        
+
         <%= yield %>
 
       <footer class="branding">

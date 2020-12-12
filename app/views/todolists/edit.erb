@@ -3,6 +3,8 @@
 <form method="POST" action="/todolists/<%= @todo.id %>">
 
     <input type="hidden" name="_method" value="PUT">
-    Todo: <input type="text" name="todo" value="<%= @todo.todo%>" > 
+    Todo: <input type="text" name="todo" value="<%= @todo.todo%>"> 
+    Date : <input type="date" name="date" value="<%= @todo.date%>"">
     <input type="submit" value="Update List!" class="btn-edt">
+    
 </form>
