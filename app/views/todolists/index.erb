@@ -4,7 +4,6 @@
 <% end %>
 
 
-
 <% current_user.todolists.order(:date).each_with_index do |t, index| %>
 <%= index+1%>. <a href="/todolists/<%=t.id%>"><%= t.todo%> </a> 
 <p> Date: <%= t.date %> </p> <br> 

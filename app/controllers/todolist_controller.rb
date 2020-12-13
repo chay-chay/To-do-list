@@ -3,6 +3,7 @@ class TodolistController < ApplicationController
 get '/todolists' do 
     # display the index view 
     if !logged_in? 
+        flash[:message] = "Login required!"
         redirect '/login' 
     end
     # @todo = Todolist.all # accessed the model 
@@ -14,6 +15,7 @@ end
 get '/todolists/new' do 
     # display the new view 
      if !logged_in? 
+        flash[:message] = "Login required!"
          redirect '/login'  #leave the method 
      else
     erb :"todolists/new"

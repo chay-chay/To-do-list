@@ -21,6 +21,7 @@ class UserController < ApplicationController
     get '/login' do #show the form
        if logged_in?
         flash[:message] = 'You have already logged in!'
+        redirect '/todolists'
         end
             erb :"/users/login"
        
@@ -41,11 +42,15 @@ class UserController < ApplicationController
     end
 
     get '/logout' do 
+        if logged_in?
         session.delete(:user_id)  # delete just the user_id 
         # session.clear 
         flash[:notice] = "You have successfully logged out!"
         redirect '/'
-
+        else 
+        flash[:message] = "You are not logged in!"
+        redirect '/'
+        end
     end
 
 end
