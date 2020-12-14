@@ -4,7 +4,9 @@
 
     <input type="hidden" name="_method" value="PUT">
     Todo: <input type="text" name="todo" value="<%= @todo.todo%>"> 
-    Date : <input type="date" name="date" value="<%= @todo.date%>"">
+    Date : <input type="date" name="date" value="<%= @todo.date%>">
+    Time : <input type="time" name="time" value="<%= @todo.time%>">
+    Description : <input type="description" name="description" value="<%= @todo.description%>" class="desc">
     <input type="submit" value="Update List!" class="btn-edt">
     
 </form>

@@ -1,12 +1,17 @@
-<h2 class="my-to-do my-list"> My To do list!  </h2>
+<h2 class="my-to-do my-list"> My to do list  </h2>
 <% if logged_in?  %>
-  <h5 class="login-user my-to-do loggin">Logged in user:  <%= current_user.email %></h5>
+  <h6 class="login-user my-to-do loggin">Logged in user:  <%= current_user.email %></h6>
 <% end %>
 
-
-<% current_user.todolists.order(:date).each_with_index do |t, index| %>
-<%= index+1%>. <a href="/todolists/<%=t.id%>"><%= t.todo%> </a> 
-<p> Date: <%= t.date %> </p> <br> 
+<% if @todo.any?%>
+<% @todo.order(:date).each_with_index do |t, index| %>
+<%= index+1%>. <a href="/todolists/<%=t.id%>"><%= t.todo%> </a><br> 
+Date: <%= t.date %><br>
+Time: <%=t.time%><br>
+Description <%=t.description%><br> <br>
+<%end%>
+<% else %>
+<h6 class="show-list"> You don't have any to do lists. </h6>
 <%end%>
 
 
