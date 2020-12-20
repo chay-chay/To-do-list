@@ -1,6 +1,7 @@
 class TodolistController < ApplicationController
 #get all todolists - READ
 get '/todolists' do 
+    binding.pry
     # display the index view 
     redirect_if_not_logged_in
     # @todo = Todolist.all # accessed the model 
