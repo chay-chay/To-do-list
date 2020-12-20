@@ -6,8 +6,10 @@ class UserController < ApplicationController
 
     post '/signup' do
         user = User.new(email: params["email"], password: params["password"])
+        
         if user.email == ""|| user.password == "" || User.find_by_email(params["email"])
             flash[:alert] = "Invalid email or password!"
+          
             redirect '/signup'
         else
             user.save

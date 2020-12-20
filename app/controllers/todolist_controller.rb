@@ -45,7 +45,6 @@ end
 put '/todolists/:id' do
     @todo = Todolist.find(params["id"]) 
     redirect_if_not_authorized
-   
    @todo.update(todo: params["todo"], date: params["date"], time: params["time"], description: params["description"])
    flash[:notice] = "Your list has been updated!"
     redirect "/todolists/#{@todo.id}"
@@ -62,6 +61,7 @@ end
 private 
 def redirect_if_not_authorized
     if @todo.user != current_user
+        flash[:message] = "Sorry, you cannot edit other people's to-do-lists"
         redirect '/todolists'
     end
 end
