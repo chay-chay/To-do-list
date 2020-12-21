@@ -4,7 +4,9 @@ Date: <%= @todo.date%> <br>
 Time: <%= @todo.time%> <br>
 Description: <%= @todo.description%><br>
 
+
  <a href="/todolists/<%= @todo.id %>/edit" class="btn-edt line" >Edit</a>
+
   <form method="POST" action="/todolists/<%= @todo.id %>">
       <input type="hidden" name="_method" value="DELETE">
       <input type="submit" value="Delete List!" class="btn-del">

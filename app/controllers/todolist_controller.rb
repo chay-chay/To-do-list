@@ -1,7 +1,6 @@
 class TodolistController < ApplicationController
 #get all todolists - READ
 get '/todolists' do 
-    binding.pry
     # display the index view 
     redirect_if_not_logged_in
     # @todo = Todolist.all # accessed the model 
@@ -59,8 +58,10 @@ delete '/todolists/:id' do
     redirect '/todolists'
 end
 
+
+
 private 
-def redirect_if_not_authorized
+def redirect_if_not_authorized #make these methods easier to change & DRY.
     if @todo.user != current_user
         flash[:message] = "Sorry, you cannot edit other people's to-do-lists"
         redirect '/todolists'
