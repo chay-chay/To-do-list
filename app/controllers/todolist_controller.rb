@@ -29,9 +29,18 @@ post '/todolists' do
     # todo = Todolist.new(todo: params[:todo])
     redirect_if_not_logged_in
     todo = current_user.todolists.build(params)
-    todo.save 
+    if !todo.save
+    # if todo.todo.blank? || todo.date.blank? || todo.time.blank? ||todo.description.blank?
+       flash.now[:alert] = todo.errors.full_messages.to_sentence #rerender
+    # @error = todo.errors.full_messages.to_sentence #rails
+        erb :"/todolists/new"
+
+        # redirect '/todolists'
+    else   
+    # todo.save 
     flash[:notice] = "Your list has been created!"
     redirect '/todolists' # makes a new GET request 
+    end
 end
 
 # view the form to UPDATE 1 particular todolist
@@ -67,4 +76,6 @@ def redirect_if_not_authorized #make these methods easier to change & DRY.
         redirect '/todolists'
     end
 end
+
+
 end

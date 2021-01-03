@@ -6,13 +6,12 @@ class UserController < ApplicationController
 
     post '/signup' do
         user = User.new(email: params["email"], password: params["password"])
-        
-        if user.email == ""|| user.password == "" || User.find_by_email(params["email"])
+        if !user.save
+        # if user.email == ""|| user.password == "" || User.find_by_email(params["email"])
             flash[:alert] = "Invalid email or password!"
-          
             redirect '/signup'
         else
-            user.save
+            # user.save
             session[:user_id] = user.id
             flash[:notice] = "Profile created successfully!"
             redirect '/todolists'
