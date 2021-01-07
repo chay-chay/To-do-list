@@ -9,6 +9,7 @@ gem 'require_all'
 gem 'thin'
 gem 'bcrypt'
 gem 'dotenv'
+gem 'foreman'
 
 group :development do
 gem 'sqlite3', '~> 1.3.6'

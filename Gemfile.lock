@@ -44,6 +44,7 @@ GEM
     diff-lcs (1.4.4)
     dotenv (2.7.6)
     eventmachine (1.2.7)
+    foreman (0.87.2)
     i18n (0.9.5)
       concurrent-ruby (~> 1.0)
     method_source (1.0.0)
@@ -132,6 +133,7 @@ DEPENDENCIES
   capybara
   database_cleaner!
   dotenv
+  foreman
   pg (~> 0.20.0)
   pry
   rack-test
